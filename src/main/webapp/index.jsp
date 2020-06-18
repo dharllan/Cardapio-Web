@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/estilo.css">
 
+<script type="text/javascript" src="js/funcoes.js"></script>
 </head>
 
 
@@ -30,7 +31,7 @@
 					<div class="col-5">
 						<div class="input-group">
 							<div class="input-group-prepend"
-								onclick="this.parentNode.querySelector('input[type=number]').stepDown();">
+								onclick="this.parentNode.querySelector('input[type=number]').stepDown();atualizar('prd-1',3.90);">
 
 
 
@@ -38,10 +39,10 @@
 									<i class="fa fa-chevron-down"></i>
 								</div>
 							</div>
-							<input id="prd-1" name="prd-1" type="number" class="form-control"
+							<input id="prd-2" name="prd-2" type="number" class="form-control"
 								value="0" min="0">
 							<div class="input-group-append"
-								onclick="this.parentNode.querySelector('input[type=number]').stepUp();">
+								onclick="this.parentNode.querySelector('input[type=number]').stepUp();atualizar('prd-1',3.90);">
 								<div class="input-group-text">
 									<i class="fa fa-chevron-up"></i>
 								</div>
@@ -62,7 +63,7 @@
 					<div class="col-5">
 						<div class="input-group">
 							<div class="input-group-prepend"
-								onclick="this.parentNode.querySelector('input[type=number]').stepDown();">
+								onclick="this.parentNode.querySelector('input[type=number]').stepDown(); atualizar('prd-2',3.90);">
 
 
 
@@ -73,7 +74,7 @@
 							<input id="prd-1" name="prd-1" type="number" class="form-control"
 								value="0" min="0">
 							<div class="input-group-append"
-								onclick="this.parentNode.querySelector('input[type=number]').stepUp();">
+								onclick="this.parentNode.querySelector('input[type=number]').stepUp();atualizar('prd-2',3.90);">
 								<div class="input-group-text">
 									<i class="fa fa-chevron-up"></i>
 								</div>
@@ -89,7 +90,8 @@
 	</div>
 	
 				
-					<button name="submit" type="submit" class="btn btn-primary confirmar">Submit</button>
+					<button id= "bt-confirmar" disabled= "disabled" name="submit" type="submit" class="btn btn-primary confirmar">Confirmar R$:
+					<span id="span-confirmar">0.00</span></button>
 				
 		
 </body>
