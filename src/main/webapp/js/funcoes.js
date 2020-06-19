@@ -3,15 +3,11 @@
 lsItem = [];
 function atualizar(id, preco){
 	quantidade = document.getElementById(id).value;
-	id = id.replace('prd-','');
+	id = id.replace('prd-', '');
 	total = quantidade * preco;
 	
-	//objeto ja scirpt..conhecido como json
-	obj = {
-			"id":id,
-			"quantidade=" :quantidade,
-			"total" : total
-			}
+	//objeto jva scirpt..conhecido como json
+	obj = {"id":id,"quantidade":quantidade,"total":total}
 	lsItem[id] = obj;
 	//console.log();
 	valorFinal();
@@ -33,7 +29,7 @@ function valorFinal(){
 		
 	}else {
 		
-		document.getElementById("bt-confirmar").setAttribute("disable","disabled");
+		document.getElementById("bt-confirmar").setAttribute("disabled","disabled");
 	}
 	
 	
