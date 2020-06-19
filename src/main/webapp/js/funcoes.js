@@ -1,13 +1,13 @@
 //span-confirmar
 
 lsItem = [];
-function atualizar(id, preco){
+function atualizar(id, preco) {
 	quantidade = document.getElementById(id).value;
 	id = id.replace('prd-', '');
 	total = quantidade * preco;
 	
 	//objeto jva scirpt..conhecido como json
-	obj = {"id":id,"quantidade":quantidade,"total":total}
+	obj = {"id":id,"quantidade": quantidade,"total" : total}
 	lsItem[id] = obj;
 	//console.log();
 	valorFinal();

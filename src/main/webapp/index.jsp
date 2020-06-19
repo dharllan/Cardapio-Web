@@ -34,11 +34,11 @@
 		
 			<div class="produto">
 				<div class="form-group row number-input">
-					<label for="prd-<%=p.getId() %>" class="col-7 col-form-label"><%=p.getNome() %></label>
+					<label for="prd-1" class="col-7 col-form-label"><%=p.getNome()%></label>
 					<div class="col-5">
 						<div class="input-group">
 							<div class="input-group-prepend"
-								onclick="this.parentNode.querySelector('input[type=number]').stepDown(); atualizar('prd-<%=p.getId() %>',<%=p.getPreco() %>);">
+								onclick="this.parentNode.querySelector('input[type=number]').stepDown(); atualizar('prd-<%=p.getId() %>',<%=p.getPreco()%>);">
 								<div class="input-group-text">
 									<i class="fa fa-chevron-down"></i>
 								</div>
@@ -46,7 +46,7 @@
 							<input id="prd-<%=p.getId() %>" name="prd-<%=p.getId() %>" type="number" class="form-control"
 								value="0" min="0">
 							<div class="input-group-append"
-								onclick="this.parentNode.querySelector('input[type=number]').stepUp(); atualizar('prd-<%=p.getId() %>',<%=p.getPreco() %>);">
+								onclick="this.parentNode.querySelector('input[type=number]').stepUp(); atualizar('prd-<%=p.getId()%>',<%=p.getPreco()%>);">
 								<div class="input-group-text">
 									<i class="fa fa-chevron-up"></i>
 								</div>
@@ -55,7 +55,7 @@
 					</div>
 				</div>
 
-				<div class="col-12 valor">R$ <%=p.getPreco() %></div>
+				<div class="col-12 valor">R$ <%=p.getPreco()%></div>
 				<hr />
 			</div>
 			<%
@@ -77,10 +77,10 @@
 									<i class="fa fa-chevron-down"></i>
 								</div>
 							</div>
-							<input id="prd-1" name="prd-1" type="number" class="form-control"
+							<input id="prd-2" name="prd-2" type="number" class="form-control"
 								value="0" min="0">
 							<div class="input-group-append"
-								onclick="this.parentNode.querySelector('input[type=number]').stepUp();atualizar('prd-2',3.90);">
+								onclick="this.parentNode.querySelector('input[type=number]').stepUp(); atualizar('prd-2',3.90);">
 								<div class="input-group-text">
 									<i class="fa fa-chevron-up"></i>
 								</div>
@@ -96,9 +96,13 @@
 	</div>
 	
 				
-<button id= "bt-confirmar" disabled= "disabled" name="submit" type="submit" class="btn btn-primary confirmar">Confirmar R$:
+<button id="bt-confirmar" onclick ="enviar()" disabled = "disabled" name="submit" type="submit" class="btn btn-primary confirmar">Confirmar R$:
 <span id="span-confirmar">0.00</span>
 </button>
+	
+	
+	
+	
 				
 		
 </body>
