@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.heroku.sample</groupId>
 	<artifactId>webappRunnerSample</artifactId>
-	 <packaging>war</packaging> 
+	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>webappRunnerSample Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -16,7 +16,6 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -24,26 +23,20 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.20</version>
 		</dependency>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<finalName>webappRunnerSample</finalName>
