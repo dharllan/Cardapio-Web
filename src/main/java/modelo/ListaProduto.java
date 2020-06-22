@@ -53,5 +53,5 @@ public class ListaProduto {
 		return "ListaProduto [idProduto=" + idProduto + ", quantidade=" + quantidade + ", total=" + total + "]";
 	}
 	
-
+	
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cardápio web</title>
+<title>Cardápio Web</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -17,14 +17,13 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/estilo.css">
-
 <script type="text/javascript" src="js/funcoes.js"></script>
 </head>
 <body>
-<form method="post" action="servletCliente">
-	<h2 class="bg-dark text-white">Cardápio Web</h2>
-	<div class="container">
-		
+	<form method="post" action="servletCliente" >
+		<h2 class="bg-dark text-white">Cardápio Web</h2>
+		<div class="container">
+
 			<div class="form-group row">
 
 				<div class="col-12">
@@ -48,7 +47,7 @@
 								<i class="fa fa-whatsapp"></i>
 							</div>
 						</div>
-						<input id="telefone" name="telefone" placeholder="(DD)99999-9999"
+						<input id="telefone" name="telefone" placeholder="(DD)9.9999-9999"
 							type="text" class="form-control">
 					</div>
 				</div>
@@ -64,10 +63,10 @@
 						<option value="Cruzeiro">Cruzeiro</option>
 						<option value="Guará">Guará</option>
 						<option value="Jardim Botânico">Jardim Botânico</option>
-						<option value="Lago Norte">Lago Norte</option>
-						<option value="Lago Sul">Lago Sul</option>
+						<option value="Lago norte">Lago norte</option>
+						<option value="Lago sul">Lago sul</option>
 						<option value="Noroeste">Noroeste</option>
-						<option value="Octogonal">Octogonal</option>
+						<option value="Octogononal">Octogononal</option>
 						<option value="Park Sul">Park Sul</option>
 						<option value="Sudoeste">Sudoeste</option>
 					</select>
@@ -80,12 +79,10 @@
 						type="text" class="form-control">
 				</div>
 			</div>
-			
-		
 
-	</div>
-	<button id="bt-continuar" onclick =""type="submit" class="btn btn-primary confirmar">Continuar
-</button>
-</form>
+		</div>
+		<button id="bt-continuar" onclick="" type="submit"
+			class="btn btn-primary confirmar">Continuar</button>
+	</form>
 </body>
 </html>

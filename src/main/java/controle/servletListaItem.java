@@ -17,51 +17,47 @@ import dao.ProdutoDao;
 import modelo.ListaProduto;
 
 @WebServlet(urlPatterns = "/enviarListaItem")
+public class servletListaItem extends HttpServlet {
 
-public class servletListaItem extends HttpServlet{
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		StringBuffer sb = new StringBuffer();
 		String linha = null;
-		
 		try {
 			BufferedReader reader = req.getReader();
 			while ((linha = reader.readLine()) != null) {
-				
 				sb.append(linha);
 			}
-			
-			
+
 		} catch (Exception e) {
-			
-			String sgListaProduto = sb.toString().replace("null,","").replace("\"id\"", "\"idProduto\"");
-			
-			System.out.println(sgListaProduto);
-			HttpSession sessao = req.getSession();
-			sessao.setAttribute("lista-item-json", sgListaProduto);
-			
-			Gson gson = new Gson();
-			ListaProduto[] lsProduto;
-			lsProduto = gson.fromJson(sgListaProduto, ListaProduto[].class);
-			ProdutoDao dao = new ProdutoDao();
-			for (ListaProduto item : lsProduto) {
-				
-				item.setProduto(dao.buscarID(item.getIdPedido()));
-				System.out.println(item);
-				
-			}
-			sessao.setAttribute("lsProduto", lsProduto);
-			
-			PrintWriter out = resp.getWriter();
-			out.print("form-cliente.jsp");
-			
 		}
 		
+		String sgListaProduto = 
+				sb.toString().replace("null,", "").replace("\"id\"", "\"idProduto\"");
+
+		System.out.println(sgListaProduto);
+
+		HttpSession sessao = req.getSession();
+		sessao.setAttribute("lista-item-json", sgListaProduto);
+		
+		Gson gson = new Gson();
+		ListaProduto[] lsProduto;
+		lsProduto = gson.fromJson(sgListaProduto, ListaProduto[].class);
+		
+		ProdutoDao dao = new ProdutoDao();
+		for (ListaProduto item : lsProduto) {
+			item.setProduto(dao.buscarID(item.getIdProduto()));
+			System.out.println(item);
+		}
+		
+		sessao.setAttribute("lsProduto", lsProduto);
+
+		PrintWriter out = resp.getWriter();
+		out.print("form-cliente.jsp");
+
 	}
-
 }
-
 
 
 
