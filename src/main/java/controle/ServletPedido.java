@@ -46,7 +46,7 @@ public class ServletPedido extends HttpServlet {
 			daoListaP.incluir(item);
 			lsItem += "\n"+item.getProduto().getNome()+"/"+item.getQuantidade()+"/"+item.getTotal();
 		}
-		String fone = "5561985607460";
+		String fone = "5561998293346";
 		String msg = "Olá, me chamo "+cliente.getNome()+
 				"\nFiz o pedido de N° "+pedido.getId()+
 				"\nProduto/Qt/Total"+
