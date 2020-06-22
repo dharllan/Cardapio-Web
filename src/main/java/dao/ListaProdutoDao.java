@@ -11,8 +11,7 @@ public class ListaProdutoDao {
 	public void incluir(ListaProduto lsProduto) {
 		try {
 			Connection conexao = Conexao.getConectar();
-			PreparedStatement stm = conexao.prepareStatement(
-					"insert into lista_produto(id_produto,id_pedido,quantidade,total) values(?,?,?,?)");
+			PreparedStatement stm = conexao.prepareStatement("insert into lista_produto(id_produto,id_pedido,quantidade,total) values(?,?,?,?)");
 			stm.setInt(1, lsProduto.getIdProduto());
 			stm.setInt(2, lsProduto.getIdPedido());
 			stm.setInt(3, lsProduto.getQuantidade());
