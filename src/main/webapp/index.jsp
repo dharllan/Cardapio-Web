@@ -102,30 +102,21 @@
 	
 <script type="text/javascript">
 
-function enviar() {
-	
+function enviar(){
 	var xmlhttp = new XMLHttpRequest();
 	
-	xmlhttp.onreadystatechange = function (){
+	xmlhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
 			location.replace(this.responseText);
-			
-			
-			
 		}
-		
 	}
-	
-	
 	
 	var url = "enviarListaItem";
 	xmlhttp.open("POST",url);
 	xmlhttp.setRequestHeader("Content-Type","application/json;charset=UTF-8");
 	xmlhttp.send(JSON.stringify(lsItem));
 	console.log(xmlhttp);
-	
 }
-
 </script>	
 	
 	

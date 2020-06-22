@@ -7,23 +7,30 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelo.Cliente;
 
 @WebServlet(urlPatterns = "/servletCliente")
 public class ServletCliente extends HttpServlet {
-@Override
-protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-	//super.doPost(req, resp);
-	req.setCharacterEncoding("UTF-8");
-	
-	Cliente cliente = new Cliente();
-	cliente.setNome(req.getParameter("nome"));
-	cliente.setTelefone(req.getParameter("telefone"));
-	cliente.setCidade(req.getParameter("cidade"));
-	cliente.setEndereco(req.getParameter("endereço"));
-	
-	System.out.println(cliente.toString());
-}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		// super.doPost(req, resp);
+		req.setCharacterEncoding("UTF-8");
+
+		Cliente cliente = new Cliente();
+		cliente.setNome(req.getParameter("nome"));
+		cliente.setTelefone(req.getParameter("telefone"));
+		cliente.setCidade(req.getParameter("cidade"));
+		cliente.setEndereco(req.getParameter("endereço"));
+
+		System.out.println(cliente.toString());
+		
+		HttpSession sessao = req.getSession();
+		sessao.setAttribute("objCliente", cliente);
+		
+		resp.sendRedirect("concluir-pedido.jsp");
+
+	}
 }

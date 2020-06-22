@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
+import dao.ProdutoDao;
+import modelo.ListaProduto;
+
 @WebServlet(urlPatterns = "/enviarListaItem")
 
 public class servletListaItem extends HttpServlet{
@@ -29,9 +34,24 @@ public class servletListaItem extends HttpServlet{
 			
 			
 		} catch (Exception e) {
-			System.out.println(sb.toString().replace("null,",""));
+			
+			String sgListaProduto = sb.toString().replace("null,","").replace("\"id\"", "\"idProduto\"");
+			
+			System.out.println(sgListaProduto);
 			HttpSession sessao = req.getSession();
-			sessao.setAttribute("lista-item-json", sb.toString().replace("null,",""));
+			sessao.setAttribute("lista-item-json", sgListaProduto);
+			
+			Gson gson = new Gson();
+			ListaProduto[] lsProduto;
+			lsProduto = gson.fromJson(sgListaProduto, ListaProduto[].class);
+			ProdutoDao dao = new ProdutoDao();
+			for (ListaProduto item : lsProduto) {
+				
+				item.setProduto(dao.buscarID(item.getIdPedido()));
+				System.out.println(item);
+				
+			}
+			sessao.setAttribute("lsProduto", lsProduto);
 			
 			PrintWriter out = resp.getWriter();
 			out.print("form-cliente.jsp");
